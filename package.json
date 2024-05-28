@@ -1,0 +1,28 @@
+{
+  "name": "doctor-appointment-project",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "server.js",
+  "server": "node server.js",
+  "start": "nodemon server.js",
+  "client": "npm start --prefix ./client",
+  "dev": "concurrently \" npm run server\" \" npm run client\"",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Izharul Haque",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^5.13.3",
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^8.2.2",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
