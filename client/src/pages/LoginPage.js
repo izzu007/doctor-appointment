@@ -28,11 +28,25 @@ const LoginPage = () => {
     <div className='form-container'>
       <Form layout='vertical' onFinish={onFinishHandler} className='register-form'>
           <h3 className='text-center'>Login Form</h3>
-          <Form.Item label="Email" name="email">
-            <Input type='email' required />
+          <Form.Item label="Email" name="email" rules={[
+          {
+            required: true,
+            message: 'Please enter your email',
+          },
+          {
+            type: "email",
+            message: "The input is not valid E-mail!",
+          },
+        ]}>
+            <Input type='email' />
           </Form.Item>
-          <Form.Item label="Password" name="password">
-            <Input type='password' required />
+          <Form.Item label="Password" name="password"  rules={[
+        {
+          required: true,
+          message: 'Please enter your password',
+        },
+      ]}>
+            <Input type='password' />
           </Form.Item>
           <button className='btn btn-primary' type='submit'>Login</button>
           <Link to="/register" className='m-2'>Not a user register here</Link>

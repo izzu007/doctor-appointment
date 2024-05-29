@@ -20,7 +20,7 @@ const HomePage = () => {
   }, []);
   return(
     <Layout>
-        <h2>Izharul Haque</h2>
+        <h1>Izharul Haque</h1>
     </Layout>
   )
 }

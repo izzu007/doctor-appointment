@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const dbConnection = async () => {
     try{
-        const conn = await mongoose.connect('mongodb://localhost:27017/doctor_appointment');
+        const conn = await mongoose.connect('mongodb+srv://admin:jbifnUMNxlHre7wa@cluster0.z7yya.mongodb.net/doctor-appointment?retryWrites=true&w=majority');
         if(conn){
             console.log('Database connected successfully.');
         }
