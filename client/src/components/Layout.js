@@ -1,20 +1,28 @@
 import React from 'react'
 import '../styles/LayoutStyle.css';
-import { sidebarMenu } from '../data/MenuData';
-import { Link, useLocation } from 'react-router-dom';
+import { userMenu } from '../data/MenuData';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { message } from 'antd';
 
 const Layout = ({children}) => {
     const location = useLocation();
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.clear();
+        message.success = ('Logout Successfully')
+        navigate('/login');
+    }
+
     return(
         <>
             <div className='main'>
                 <div className='layout'>
                     <div className='sidebar'>
-                        <div className='logo'> <h6>DOC APP</h6>
+                        <div className='logo'> <h6>Doctor Appointment APP</h6>
                         <hr/>
                         </div>
                         <div className='menu'> 
-                            { sidebarMenu.map(menu => {
+                            { userMenu.map(menu => {
                                 const isActive = location.pathname === menu.path;
                                 return(
                                     <>
@@ -25,6 +33,10 @@ const Layout = ({children}) => {
                                     </>
                                 )
                             }) }
+                            <div className="menu-item">
+                                <i className="fa-solid fa-right-from-bracket"></i>
+                                <Link to="/login" onClick={handleLogout}>Logout</Link>
+                            </div>
                         </div>
                     </div>
                     <div className='content'>
